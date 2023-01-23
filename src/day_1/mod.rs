@@ -1,8 +1,4 @@
-use std::fs;
-
-fn read_input_file() -> String {
-    fs::read_to_string("src/day_1/input.txt").unwrap()
-}
+use crate::read_input_file;
 
 fn get_elfs_calories(input: &str) -> Vec<i32> {
     let mut elfs_calories = Vec::new();
@@ -20,7 +16,7 @@ fn get_elfs_calories(input: &str) -> Vec<i32> {
 }
 
 pub fn solve() {
-    let input = read_input_file();
+    let input = read_input_file(1);
     let mut elfs_calories = get_elfs_calories(input.as_str());
     elfs_calories.sort_by(|a, b| b.cmp(a));
 
